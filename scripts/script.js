@@ -2,8 +2,8 @@
 
 let a = ''; // первое число
 let b = ''; // второе число
-let sign = ''; // третье число
-let result = false; // проверка на ответ
+let sign = ''; // знак + - / *
+let result = false; // проверка на наличие результата вычисления
 
 const digit = ['0','1','2','3','4','5','6','7','8','9',]; // все числа доступные в кнопках
 const action = ['÷', '×', '–', '+', ]; // все доступные действия ИСКЛЮЧАЯ РАВНО!!!
@@ -18,9 +18,11 @@ function clearAll() {
     out.textContent = '0';
 }
 
-document.querySelector('.c').onclick = clearAll; // при нажатии на с вызывается функция обнуления (строка 12)
+document.querySelector('.c').addEventListener('click', clearAll); // при нажатии на с вызывается функция обнуления
+document.querySelector('.buttons').addEventListener('click', buttonClick )
 
-document.querySelector('.buttons').onclick = (event) => {
+// document.querySelector('.buttons').onclick = (event) => {
+function buttonClick(event){
 
     //в блоке кнопок buttons нажата не кнопка btn
     if(!event.target.classList.contains('btn')) return;
