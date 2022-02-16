@@ -89,6 +89,7 @@ function buttonClick(event){
     }
 
     //равно
+    if(result === false) {
     if (key === '=') {
         switch (sign){
             case '+':
@@ -111,8 +112,10 @@ function buttonClick(event){
                 a = a / b
                 break;
         }
+    }
+}   
         result = true;
         if(a%1 === 0) out.textContent = a;
         if(a%1 !== 0) out.textContent = a.toFixed(2);
-    }
+    
 }
