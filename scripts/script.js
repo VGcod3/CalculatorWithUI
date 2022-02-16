@@ -53,6 +53,7 @@ function buttonClick(event){
                 out.textContent = a;
                 return;
             }
+            if (a.length>5) return;
             a += key;
             out.textContent = a;
         }
@@ -106,10 +107,10 @@ function buttonClick(event){
                     sign = '';
                     return;
                 }
-                a = a / b;
+                a = a / b
                 break;
         }
         result = true;
-        out.textContent = a;
+        out.textContent = a.toFixed(2);
     }
 }
